@@ -19,10 +19,29 @@
 
 4）多语言语义表示库：其中，多语言语义表示资源库提供了16种其他语言至英语的跨语言对齐词向量表示；多语言词汇对齐资源库提供了包含46对语言对的词汇翻译对齐库，可用于评测LLMs多语言能力。
 
-## 代码指令
+
+## 代码指令说明
 
 ```bash
 # Part1: zeor-shot基础测评
-第一步 收集大模型回复 --> python 模型名称_zero_shot.py --src_lang xx --trg_lang xx 
-第一步 正则化匹配单词的对应翻译 --> python 模型名称_extract.py --src_lang xx --trg_lang xx 
-第三部 评估准确率 --> python evaluate.py --src_lang xx --trg_lang xx --file_name 翻译结果文件路径
+python 模型名称_zero_shot.py --src_lang xx --trg_lang xx 
+python llama3_zero_shot.py --src_lang de --trg_lang fi
+
+# Part2: 上下文策略对大语言模型多语能力的影响
+1.few-shot 数量的影响
+python 模型名称_few_shot_[1-32].py --src_lang xx --trg_lang xx --number few_shot数量
+python llama3_few_shot_[1-32].py --src_lang de --trg_lang fi --number 1
+
+2.few-shot 质量的影响
+1) 直接1-shot 
+python 模型名称_1_shot.py --src_lang xx --trg_lang xx
+python glm_1_shot.py --src_lang de --trg_lang ru
+2）英语辅助的1-shot
+python 模型名称_1_shot_en_aid.py --src_lang xx --trg_lang xx
+python glm_1_shot_en_aid.py --src_lang de --trg_lang ru
+3）从跨语言词向量中获取的1-shot
+
+
+3. 英语作为辅助语言对其的影响
+python 模型名称_en_aid.py --src_lang xx --trg_lang xx
+python llama3_en_aid.py --src_lang tr --trg_lang fi
