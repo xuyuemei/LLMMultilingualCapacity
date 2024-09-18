@@ -100,7 +100,7 @@ def wordsim_evaluate(src_lang, trg_lang, data_dict):
     return acc1
 
 # Set your OpenAI GPT-3 API key
-API_SECRET_KEY = "zk-9e873ff7d65d60a0f654bf4a40251498"
+API_SECRET_KEY = ""
 BASE_URL = "https://api.zhizengzeng.com/v1/"
 
 # Function to augment text using GPT-3 with retry mechanism
