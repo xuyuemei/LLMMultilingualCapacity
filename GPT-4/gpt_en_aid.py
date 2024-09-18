@@ -9,7 +9,7 @@ import argparse
 import csv
 import re
 
-API_SECRET_KEY = "zk-9e873ff7d65d60a0f654bf4a40251498"
+API_SECRET_KEY = ""
 BASE_URL = "https://api.zhizengzeng.com/v1/"
 
 
