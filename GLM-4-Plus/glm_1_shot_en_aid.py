@@ -8,7 +8,7 @@ import csv
 
 
 def augment_text_with_glm_with_retry(content, max_retries=3):
-    client = ZhipuAI(api_key="7b2c348aa000c771ca41fad2a5ed5174.tkYimBPYb9ITp59V")  # 填写您自己的APIKey
+    client = ZhipuAI(api_key="")  # 填写您自己的APIKey
     for _ in range(max_retries):
         try:
             response = client.chat.completions.create(
